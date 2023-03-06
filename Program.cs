@@ -13,11 +13,13 @@ HttpListener server = new HttpListener();
 //Создание объекта контроллеров
 Controllers controllers = new Controllers();
 
+string ip = "192.168.0.10:2800/";
+
 // Установка API адресов
-server.Prefixes.Add("http://192.168.0.10:2800/authorization/");
-server.Prefixes.Add("http://192.168.0.10:2800/send/");
-server.Prefixes.Add("http://192.168.0.10:2800/registration/");
-server.Prefixes.Add("http://192.168.0.10:2800/read/");
+server.Prefixes.Add("http://" + ip + "authorization/");
+server.Prefixes.Add("http://" + ip + "send/");
+server.Prefixes.Add("http://" + ip + "registration/");
+server.Prefixes.Add("http://" + ip + "read/");
 server.Start();
 
 while (true)
