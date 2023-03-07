@@ -22,6 +22,7 @@ https://learn.microsoft.com/ru-Ru/sql/ssms/download-sql-server-management-studio
 
 ## Кликнуть правой кнопкой мыши по названию папки "Databases"
 
+<<<<<<< HEAD
 ## В выпавшем меню выбрать пункт "New Database..."
 
 ## Cоздать базу данных
@@ -30,6 +31,19 @@ https://learn.microsoft.com/ru-Ru/sql/ssms/download-sql-server-management-studio
 При создании базы запомните название которое вы вписали!
 Оно потребуется позже.
 '''
+=======
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='members' AND xtype='U') CREATE TABLE members( id int IDENTITY(1,1) NOT NULL, first_name VARCHAR(1000) NOT NULL, last_name VARCHAR(1000) NOT NULL, age INT NOT NULL, member_login VARCHAR(1000) UNIQUE NOT NULL, member_password VARCHAR(1000) NOT NULL ) 
+
+go
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='messages' AND xtype='U') CREATE TABLE messages( id int IDENTITY(1,1) NOT NULL, member_id INT NOT NULL, date_time VARCHAR(1000) NOT NULL, content VARCHAR(1000) NOT NULL )
+
+go
+
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='sessions' AND xtype='U') CREATE TABLE sessions( id int IDENTITY(1,1) NOT NULL, uuid VARCHAR(1000) NOT NULL, date_deactivation VARCHAR(1000) NOT NULL, member_id INT NOT NULL )
+
+go
+>>>>>>> 86bff0fc241a66d2a0fe5e27a1036a63edd7aeec
 
 ## Сверху нажать на кнопку NewQuery
 
