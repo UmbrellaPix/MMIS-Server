@@ -49,6 +49,9 @@ https://learn.microsoft.com/ru-Ru/sql/ssms/download-sql-server-management-studio
 
 '''
 Newtonsoft.Json
+'''
+
+'''
 System.Data.SqlClient
 '''
 
