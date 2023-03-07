@@ -8,11 +8,14 @@ using System.Threading.Tasks;
 
 namespace Server_ChatMMIS
 {
+
     internal class DataBase
     {
+        const string nameSqlServer = "_ИМЯ_ВАШЕГО_СЕРВЕРА_ПРИ_ВХОДЕ_В_Microsoft_SQL_Server_Management_Studio_18_";
+        const string nameDataBase = "_ИМЯ_ВАШЕЙ_БАЗЫ_ДАННЫХ_КОТОРОЕ_ВЫ_УКАЗЫВАЛИ_ПРИ_СОЗДАНИИ_";
 
         //Объект соединения с базой данных
-        SqlConnection sqlConnection = new SqlConnection(@"Data Source=DESKTOP-9OM3ILD;Initial Catalog=Data;Integrated Security=True;");
+        SqlConnection sqlConnection = new SqlConnection($@"Data Source={nameSqlServer};Initial Catalog={nameDataBase};Integrated Security=True;");
 
 
         ////Открывает соединение с базой данных ( ЗАВЕРШЕНО ✓ )

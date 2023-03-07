@@ -6,6 +6,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks.Dataflow;
 
+//Настройки соединения с сервером
+string ip = "__СЮДА_ВСТАВЬТЕ_ВАШ_ЛОКАЛЬНЫЙ_IP_";
+string port = "2800";
 
 //Создание объекта сервера
 HttpListener server = new HttpListener();
@@ -13,13 +16,11 @@ HttpListener server = new HttpListener();
 //Создание объекта контроллеров
 Controllers controllers = new Controllers();
 
-string ip = "192.168.0.10:2800/";
-
 // Установка API адресов
-server.Prefixes.Add("http://" + ip + "authorization/");
-server.Prefixes.Add("http://" + ip + "send/");
-server.Prefixes.Add("http://" + ip + "registration/");
-server.Prefixes.Add("http://" + ip + "read/");
+server.Prefixes.Add("http://" + ip + ":" + port + "/authorization/");
+server.Prefixes.Add("http://" + ip + ":" + port + "/send/");
+server.Prefixes.Add("http://" + ip + ":" + port + "/registration/");
+server.Prefixes.Add("http://" + ip + ":" + port + "/read/");
 server.Start();
 
 while (true)

@@ -1,37 +1,82 @@
 # MMIS-Server
 Server from MMIS-Chat
 
-1. Для запуска проекта нужно установить программы:
-1.1 SQL SERVER
+## Установить Microsoft Visual Studio
+'''
+https://visualstudio.microsoft.com/ru/
+'''
+
+## Установить SQL SERVER
+
+'''
 https://www.microsoft.com/ru-ru/sql-server/sql-server-downloads
+'''
 
-1.2 Microsoft SQL Server Management Studio
+## Установить Microsoft SQL Server Management Studio
+
+'''
 https://learn.microsoft.com/ru-Ru/sql/ssms/download-sql-server-management-studio-ssms?view=azure-sqldw-latest
+'''
 
+## Подключиться к SQL Server Management Studio
 
-2. В SQL Server Management Studio создать базу данных "Data"
-2.1 Создать в ней таблицы members, messages, sessions.
-SQL Запрос для этого представлен ниже:
+## Кликнуть правой кнопкой мыши по названию папки "Databases"
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='members' AND xtype='U') CREATE TABLE members( id int IDENTITY(1,1) NOT NULL, first_name VARCHAR(1000) NOT NULL, last_name VARCHAR(1000) NOT NULL, age INT NOT NULL, member_login VARCHAR(1000) UNIQUE NOT NULL, member_password VARCHAR(1000) NOT NULL )
-go
+## В выпавшем меню выбрать пункт "New Database..."
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='messages' AND xtype='U') CREATE TABLE messages( id int IDENTITY(1,1) NOT NULL, member_id INT NOT NULL, date_time VARCHAR(1000) NOT NULL, content VARCHAR(1000) NOT NULL )
-go
+## Cоздать базу данных
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='sessions' AND xtype='U') CREATE TABLE sessions( id int IDENTITY(1,1) NOT NULL, uuid VARCHAR(1000) NOT NULL, date_deactivation VARCHAR(1000) NOT NULL, member_id INT NOT NULL )
-go
+'''
+При создании базы запомните название которое вы вписали!
+Оно потребуется позже.
+'''
 
-3. Скачать код этого проекта, и установить пакеты NuGet:
-    3.1 Newtonsoft.Json
-    3.2 System.Data.SqlClient
+## Сверху нажать на кнопку NewQuery
 
-4. В Program.cs заменить переменную ip на свой локальный ip компьютера
-5. В DataBase.cs заменить идентификатор подключения к базе данных на свой, который вы получите при создании базы данных "Data"
+## В открывшееся поле вставить SQL запрос из файла SQLQueryДляСозданияТаблицВБазеДанных.sql
 
-15:> SqlConnection sqlConnection = new SqlConnection(@"Data Source=ЗДЕСЬ ДОЛЖЕН БЫТЬ ВАШ ИДЕНТИФИКАТОР;Initial Catalog=Data;Integrated Security=True;");
+## Нажать Execute в том же месте где и была кнопка NewQuery
 
-Готово!
+## В Microsoft Visual Studio создать пустой проект "Консольное приложение (Microsoft)"
 
-Так же можете посмотреть видео на YouTube о том как запустить этот проект по ссылке:
+## Файлы из репозитория вставить в созданный проект, файл Program.cs заменить на файл из репозитория
+
+## Нажать сверху "Проект" и выбрать пункт "Управление пакетами NuGet..."
+
+## Нажать "Обзор"
+
+## Установить 2 пакета:
+
+'''
+Newtonsoft.Json
+System.Data.SqlClient
+'''
+
+## Открыть cmd (Командная строка)
+
+## В командной строке выполнить команду
+
+"""
+ipconfig
+"""
+
+## Скопировать ip из пункта IPv4-адрес 
+
+## В файле Program.cs заменить значение переменной ip на скопированный адрес из прошлого пункта
+
+## Открыть Sql Server Management Studio не подключаясь к серверу
+
+## Скопировать текст из поля Server-name:
+
+## В DataBase.cs заменить значение переменной "nameSqlServer" на скопированные данные из поля Server-name:
+
+## В DataBase.cs заменить значение переменной "nameDataBase" на название базы данных которое вы указали при ее создании
+
+'''
+Название базы данных так же высвечивается при подключении к sql серверу в папке Databases с соответствующей иконкой
+'''
+
+## Готово!
+
+## Позже будет залит ролик на YouTube как запустить этот проект. Спасибо за внимание!
 
