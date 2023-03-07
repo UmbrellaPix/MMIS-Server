@@ -37,6 +37,12 @@ https://learn.microsoft.com/ru-Ru/sql/ssms/download-sql-server-management-studio
 
 ## Нажать Execute в том же месте где и была кнопка NewQuery
 
+## Открыть Microsoft Visual Studio !ОТ ИМЕНИ АДМИНИСТРАТОРА!
+
+'''
+Иначе при запуске сервера он выдаст ошибку, не знаю почему...
+'''
+
 ## В Microsoft Visual Studio создать пустой проект "Консольное приложение (Microsoft)"
 
 ## Файлы из репозитория вставить в созданный проект, файл Program.cs заменить на файл из репозитория
