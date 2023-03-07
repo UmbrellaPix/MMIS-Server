@@ -13,7 +13,7 @@ https://learn.microsoft.com/ru-Ru/sql/ssms/download-sql-server-management-studio
 2.1 Создать в ней таблицы members, messages, sessions.
 SQL Запрос для этого представлен ниже:
 
-IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='members' AND xtype='U') CREATE TABLE members( id int IDENTITY(1,1) NOT NULL, first_name VARCHAR(1000) NOT NULL, last_name VARCHAR(1000) NOT NULL, age INT NOT NULL, member_login VARCHAR(1000) UNIQUE NOT NULL, member_password VARCHAR(1000) NOT NULL )
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='members' AND xtype='U') CREATE TABLE members( id int IDENTITY(1,1) NOT NULL, first_name VARCHAR(1000) NOT NULL, last_name VARCHAR(1000) NOT NULL, age INT NOT NULL, member_login VARCHAR(1000) UNIQUE NOT NULL, member_password VARCHAR(1000) NOT NULL ) 
 go
 
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='messages' AND xtype='U') CREATE TABLE messages( id int IDENTITY(1,1) NOT NULL, member_id INT NOT NULL, date_time VARCHAR(1000) NOT NULL, content VARCHAR(1000) NOT NULL )
